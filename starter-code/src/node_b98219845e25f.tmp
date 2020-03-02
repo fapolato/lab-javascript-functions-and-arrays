@@ -1,68 +1,18 @@
 // Iteration #1: Find the maximum
-const maxOfTwoNumbers = (num1, num2) => Math.max(num1, num2);
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-const findLongestWord = (arrayOfWords) => {
-
-  let wordsLength = [];
-  if(arrayOfWords.length === 0) return null;
-
-  arrayOfWords.forEach(element => wordsLength.push(element.length))
-  
-  return arrayOfWords[wordsLength.indexOf(Math.max(...wordsLength))]
-}
 // Iteration #3: Calculate the sum
-const sumNumbers = (arrayOfNumbers) => {
-  let sumOfNumbers = 0;
-  arrayOfNumbers.forEach(element => sumOfNumbers += element)
-  return sumOfNumbers;
-}
-
-const sum = (arrayOfElements) => {
-  let sumOfElements = 0;
-  arrayOfElements.forEach(element => {
-    if(typeof element === 'string') {
-      sumOfElements += element.length
-    } else if(typeof element === 'boolean') {
-      element === true ? sumOfElements += 1 : sumOfElements += 0;
-    } else {
-      sumOfElements += element
-    }
-  })
-  return sumOfElements;
-}
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-const averageNumbers = (arrayOfNumbers) => {
-  if (arrayOfNumbers.length === 0) return null;
-  return sumNumbers(arrayOfNumbers)/arrayOfNumbers.length
-}
-
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
-const sumOfWords = (arrayOfWords) => {
-  let sumWords = 0;
-  arrayOfWords.forEach(element => sumWords += element.length)
-  return sumWords;
-}
-
-const averageWordLength = (arrayOfWords) => {
-  if (arrayOfWords.length === 0) return null
-  return sumOfWords(arrayOfWords)/arrayOfWords.length
-}
-
-const avg = (arr) => {
-  if(arr.length === 0) return null;
-  return parseFloat((sum(arr)/arr.length).toFixed(2))
-}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -79,35 +29,8 @@ const wordsUnique = [
   'bring'
 ];
 
-const uniquifyArray = (arrayOfWords) => {
-  if(arrayOfWords.length === 0) return null
-  arrayOfWords.forEach((element, index) => {
-    for (let i = 0; i < arrayOfWords.length; i++) {
-      if(element === arrayOfWords[i] && index != i) {
-       arrayOfWords.splice(i,1)
-      }
-    }
-})
-
-return arrayOfWords;
-}
-
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
-
-const doesWordExist = (arrayOfWords, word) => {
-  let answer;
-  if(arrayOfWords.length === 0) return null
-  for(let i = 0; i < arrayOfWords.length; i++) {
-    if(arrayOfWords[i] === word) {
-      answer = true
-      break;
-    } else {
-      answer = false
-    }
-  }
-  return answer;
-}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -123,17 +46,6 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
-
-const howManyTimes = (arrayOfWords, word) => {
-  let numberOfTimes = 0;
-  arrayOfWords.forEach(element => {
-    if(element === word) {
-    numberOfTimes += 1;
-  }
-  })
-
-  return numberOfTimes;
-}
 
 // Iteration #8: Bonus
 
@@ -166,4 +78,13 @@ const mtx = [
   [1,1,2]
 ]
 
-console.log(mtx);
+let arrayMultiplication = []
+
+function greatestProduct(matrix) {
+  matrix.forEach(element => {
+    arrayMultiplication = element.reduce((a,b) => a*b);
+    
+
+    console.log(arrayMultiplication)
+  })
+}
